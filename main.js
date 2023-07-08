@@ -48,7 +48,7 @@ function program () {
     }
 
 
-    const a = getNumericValue("Будемо знаходить рішення квадратного рівняння виду: ax^2 + bx + c = 0\nВведіть a", "");
+    const a = getNumericValue("Введіть a", "Будемо знаходить рішення квадратного рівняння виду: ax^2 + bx + c = 0", "");
     if (a === null) return goFromApp();
 
     const b = getNumericValue("a=" + a + "\nВведіть b", "" );
