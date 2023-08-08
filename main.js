@@ -25,13 +25,14 @@ function program () {
         const d = b * b - 4 * a * c;
         if (d < 0) {
             return {
-                d: d,
+                d: -D,
                 x1: null,
                 x2: null
             };
-        } else {
-            sqrtD = Math.sqrt(d)
+        } else  {
+            sqrtD = Math.sqrt(d);
             x1 = (-b + sqrtD) / (2 * a);
+            x2 = (-b - sqrtD) / (2 * a);
             
             return {
 
@@ -39,23 +40,21 @@ function program () {
                 x1: x1,
                 x2: x2
             }
-        }
+        }  
+            
     }
 
 
-    function goFromApp() {
-        alert ("Жаль. Сподіваюсь ще побачитись.");
-    }
 
 
-    const a = getNumericValue("Введіть a", "Будемо знаходить рішення квадратного рівняння виду: ax^2 + bx + c = 0", "");
-    if (a === null) return goFromApp();
+    const a = getNumericValue("Будемо знаходить рішення квадратного рівняння виду: ax^2 + bx + c = 0","Введіть a", "");
+
 
     const b = getNumericValue("a=" + a + "\nВведіть b", "" );
-    if (b === null) return goFromApp();
+   
 
     const c = getNumericValue("a=" + a + ", b =" + b + "\nВведіть c", "");
-    if (c === null) return goFromApp();
+    
 
     const result = squerEquation(a, b, c, () => alert ("a = 0. Рівняння не має рішень") );
     if (result === null) {
